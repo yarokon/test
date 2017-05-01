@@ -1,28 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>GETWORD</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" async></script>
+</head>
 <body>
-
-<p>Click the button to get your coordinates.</p>
-
-<button onclick="getLocation()">Try It</button>
-
-<p id="demo"></p>
-
-<script>
-var x = document.getElementById("demo");
-
-function getLocation() {
-    if (navigator.geolocation) {
-        navigator.geolocation.watchPosition(showPosition);
-    } else {
-        x.innerHTML = "Geolocation is not supported by this browser.";}
-    }
-    
-function showPosition(position) {
-    x.innerHTML="Latitude: " + position.coords.latitude +
-    "<br>Longitude: " + position.coords.longitude;
-}
-</script>
-
+  <main>
+    <p><a href="http://getword.ru/ukr/index.php?shablon=&submit=submit&regex_filter=99&wrdlen_left=2&wrdlen_right=&sort=3&columns=20&pos=pos1&dict%5Bmain%5D=on">GETWORD</a></p>
+    <textarea id="text" cols="20" rows="7"></textarea>
+    <br>
+    <button id="filter">Filter</button>
+  </main>
+  <hr>
+  <div id="result"></div>
 </body>
 </html>
