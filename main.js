@@ -7,10 +7,15 @@
 
   function main() {
     let wordsList = splitWords(text);
+
+    if (!wordsList) {
+      clearDisplay();
+      return;
+    }
+
     const key = countSymbols( wordsList.shift() );
 
     wordsList = wordsList.filter( parse(key) );
-
     wordsList = sort(wordsList);
 
     clearDisplay();
@@ -18,7 +23,7 @@
   }
 
   function splitWords(text) {
-    return text.value.match(/[а-яіґ]+/gi);
+    return text.value.match(/[а-яґєії']+/gi);
   }
 
   function countSymbols(str) {
@@ -59,6 +64,8 @@
     const indexes = [],
           slices = [];
     let len = 0;
+
+    arr.sort( (a, b) => b.length - a.length );
 
     for (let i = 0; i < arr.length; i++) {
       if (arr[i].length !== len) {
