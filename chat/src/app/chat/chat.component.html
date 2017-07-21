@@ -1,0 +1,22 @@
+<form>
+  <md-input-container>
+    <input type="text" mdInput #message placeholder="Your message...">
+  </md-input-container>
+
+  <button
+    type="submit"
+    md-button
+    (click)="newMessage(message.value); message.value = ''"
+  >
+    <b>Send</b>
+  </button>
+</form>
+
+<md-list>
+  <md-list-item *ngFor="let message of messages | async">
+    <md-icon md-list-icon>message</md-icon>
+    <p md-line> {{ message.$value }} </p>
+  </md-list-item>
+</md-list>
+
+<button md-fab (click)="deleteMessages()"><md-icon>clear</md-icon></button>

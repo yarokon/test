@@ -1,0 +1,26 @@
+form, md-list {
+  max-width: 800px;
+  min-width: 400px;
+  margin: auto;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+md-input-container {
+  flex: 8;
+}
+
+button[md-button] {
+  flex: 2;
+  height: 40px;
+  outline: none;
+}
+
+button[md-fab] {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
